@@ -30,7 +30,7 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 
 	@Override
 	public Restaurant create(Restaurant restaurant) {
-	
+
 		return create(restaurant);
 	}
 

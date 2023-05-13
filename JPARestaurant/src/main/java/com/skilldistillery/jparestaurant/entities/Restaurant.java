@@ -27,6 +27,31 @@ public class Restaurant {
 
 	private double rating;
 
+	public Restaurant() {}
+	
+	public Restaurant(String name, String street, String cuisine, String websiteUrl, String phone,
+			boolean happyHour, double rating) {
+		this.name = name;
+		this.street = street;
+		this.cuisine = cuisine;
+		this.websiteUrl = websiteUrl;
+		this.phone = phone;
+		this.happyHour = happyHour;
+		this.rating = rating;
+	}
+
+	public Restaurant(int id, String name, String street, String cuisine, String websiteUrl, String phone,
+			boolean happyHour, double rating) {
+		this.id = id;
+		this.name = name;
+		this.street = street;
+		this.cuisine = cuisine;
+		this.websiteUrl = websiteUrl;
+		this.phone = phone;
+		this.happyHour = happyHour;
+		this.rating = rating;
+	}
+
 	public int getId() {
 		return id;
 	}
