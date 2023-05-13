@@ -9,9 +9,13 @@
 </head>
 <body>
 
-<h1>Welcome</h1>
+<h1>Alpena Restaurant JPACRUD</h1>
 
-${restaurantList }
+<a href="add.jsp">Add Restaurant</a><br>
+<a href="update.jsp">Update Restaurant</a><br>
+<a href="delete.jsp">Delete Restaurant</a><br>
+<a href="get.jsp">Find Restaurant</a><br>
+<a href="restaurant.jsp">Show All Restaurants</a>
 
 </body>
 </html>

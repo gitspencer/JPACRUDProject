@@ -26,7 +26,7 @@ public class RestaurantController {
 	public String getRestaurant(Integer id, Model model) {
 		Restaurant restaurant = rDao.findById(id);
 		model.addAttribute("restaurant", restaurant);
-		return "restaurant";	
+		return "../restaurant";	
 	}
 
 	@RequestMapping("add.do")
