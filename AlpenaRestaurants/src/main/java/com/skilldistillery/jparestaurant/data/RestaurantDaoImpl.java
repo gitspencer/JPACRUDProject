@@ -30,19 +30,20 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 
 	@Override
 	public Restaurant create(Restaurant restaurant) {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return create(restaurant);
 	}
 
 	@Override
 	public Restaurant update(int restaurantId, Restaurant restaurant) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		update(restaurantId, restaurant);
+		return restaurant;
 	}
 
 	@Override
 	public boolean deleteById(int restaurantId) {
-		// TODO Auto-generated method stub
+		deleteById(restaurantId);
 		return false;
 	}
 
