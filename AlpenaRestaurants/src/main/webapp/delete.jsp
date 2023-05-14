@@ -8,6 +8,7 @@
 <title>Delete Restaurant</title>
 </head>
 <body>
+<jsp:include page="navbar.jsp"></jsp:include>
 
 ${restaurantList}
 

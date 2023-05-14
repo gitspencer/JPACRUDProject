@@ -8,6 +8,7 @@
 <title>Alpena Restaurants</title>
 </head>
 <body>
+<jsp:include page="../navbar.jsp"></jsp:include>
 
 <h1>Alpena Restaurant JPACRUD</h1>
 
