@@ -16,27 +16,5 @@
 			type="submit">
 	</form>
 
-
-	<table>
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Restaurant</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="restaurant" items="${restaurantList }">
-				<tr>
-					<td>${restaurant.id }</td>
-					<td>${restaurant.name }</a></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-
-
-
-
-
 </body>
 </html>

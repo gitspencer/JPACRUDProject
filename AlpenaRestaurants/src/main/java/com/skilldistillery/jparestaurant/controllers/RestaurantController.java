@@ -27,10 +27,8 @@ public class RestaurantController {
 	@RequestMapping("getRestaurant.do")
 	public ModelAndView getRestaurant(@RequestParam("id") int id) {
 		ModelAndView mv = new ModelAndView();
-		List<Restaurant> restaurantList = rDao.findAll();
-		mv.addObject(restaurantList);
 		Restaurant restaurant = rDao.findById(id);
-		mv.addObject(restaurant);
+		mv.addObject("restaurant", restaurant);
 		mv.setViewName("../restaurant");
 		return mv;	
 	}
@@ -43,8 +41,10 @@ public class RestaurantController {
 		ModelAndView mv = new ModelAndView();
 		Restaurant restaurant = new Restaurant(name, street, cuisine, websiteUrl, phone, happyHour, rating);
 		rDao.create(restaurant);
-		mv.addObject(restaurant);
-		mv.setViewName("add.jsp");
+		if (restaurant.getId() != 0) {
+			mv.addObject(restaurant);
+		}
+		mv.setViewName("../restaurant");
 		return mv;	
 	}
 
@@ -57,7 +57,7 @@ public class RestaurantController {
 		Restaurant restaurant = new Restaurant(name, street, cuisine, websiteUrl, phone, happyHour, rating);
 		restaurant = rDao.update(id, restaurant);
 		mv.addObject(restaurant);
-		mv.setViewName("update.jsp");
+		mv.setViewName("../update");
 		return mv;	
 	}	
 	
@@ -67,7 +67,7 @@ public class RestaurantController {
 		Restaurant restaurant = rDao.findById(id);
 		rDao.deleteById(id);
 		mv.addObject(restaurant);
-		mv.setViewName("delete.jsp");
+		mv.setViewName("../delete");
 		return mv;	
 	}
 }
