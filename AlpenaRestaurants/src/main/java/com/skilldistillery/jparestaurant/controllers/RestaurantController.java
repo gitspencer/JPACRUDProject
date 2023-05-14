@@ -1,5 +1,7 @@
 package com.skilldistillery.jparestaurant.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,11 +24,15 @@ public class RestaurantController {
 		return "home";
 	}
 	
-	@RequestMapping("get.do")
-	public String getRestaurant(Integer id, Model model) {
+	@RequestMapping("getRestaurant.do")
+	public ModelAndView getRestaurant(@RequestParam("id") int id) {
+		ModelAndView mv = new ModelAndView();
+		List<Restaurant> restaurantList = rDao.findAll();
+		mv.addObject(restaurantList);
 		Restaurant restaurant = rDao.findById(id);
-		model.addAttribute("restaurant", restaurant);
-		return "../restaurant";	
+		mv.addObject(restaurant);
+		mv.setViewName("../restaurant");
+		return mv;	
 	}
 
 	@RequestMapping("add.do")

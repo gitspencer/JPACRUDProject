@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>List of Alpena, MI Restaurants</title>
+<title>Restaurant Finder</title>
 </head>
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>
@@ -14,18 +14,17 @@
 	ID: ${restaurant.id }
 	<br> Google Rating: ${restaurant.rating }
 	<br> Type: ${restaurant.cuisine }
-	<br> Happy Hour (Y/N):
-	<c:if test="${restaurant.happyHour == 0 }">
+	<br> Happy Hour: 
+	<c:if test="${restaurant.happyHour == false }">
 		<em>No</em>
 	</c:if>
-	<c:if test="$restaurant.happyHour == 1 }">
+	<c:if test="${restaurant.happyHour == true }">
 		<em>Yes</em>
 	</c:if>
-	${restaurant.happyHour } 
-	<br>
-	Address: ${restaurant.street }
+	<br> Address: ${restaurant.street }
 	<br> Phone: ${restaurant.phone }
-	<br> Website: <a href="${restaurant.websiteUrl }">${restaurant.name }</a>
+	<br> Website:
+	<a href="${restaurant.websiteUrl }">${restaurant.name }</a>
 
 </body>
 </html>
