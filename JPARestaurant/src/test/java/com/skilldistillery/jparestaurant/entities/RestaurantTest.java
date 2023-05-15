@@ -44,6 +44,12 @@ class RestaurantTest {
 	void test_Restaurant_entity_mapping() {
 		assertNotNull(restaurant);
 		assertEquals("Pompeyos Mexican Grill", restaurant.getName());
+		assertEquals("1120 S State Ave", restaurant.getStreet());
+		assertEquals("Mexican", restaurant.getCuisine());
+		assertEquals("https://www.facebook.com/people/Pompeyos-Mexican-grill/100063639037783/", restaurant.getWebsiteUrl());
+		assertEquals("9893402036", restaurant.getPhone());
+		assertEquals(false, restaurant.isHappyHour());
+		assertEquals(4.5, restaurant.getRating());
 	}
 
 }

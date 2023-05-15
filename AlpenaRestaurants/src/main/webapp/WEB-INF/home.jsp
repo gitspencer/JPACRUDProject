@@ -14,7 +14,6 @@
 
 <a href="getRestaurant.jsp">Find Restaurant</a><br>
 <a href="add.jsp">Add Restaurant</a><br>
-<a href="update.jsp">Update Restaurant</a><br>
 <a href="delete.jsp">Delete Restaurant</a><br>
 
 

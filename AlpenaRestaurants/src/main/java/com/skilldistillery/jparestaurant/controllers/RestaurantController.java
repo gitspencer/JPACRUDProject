@@ -42,22 +42,22 @@ public class RestaurantController {
 		Restaurant restaurant = new Restaurant(name, street, cuisine, websiteUrl, phone, happyHour, rating);
 		rDao.create(restaurant);
 		if (restaurant.getId() != 0) {
-			mv.addObject(restaurant);
+			mv.addObject("restaurant", restaurant);
 		}
-		mv.setViewName("../restaurant");
+		mv.setViewName("restaurant");
 		return mv;	
 	}
 
 	@RequestMapping("update.do")
-	public ModelAndView updateRestaurant(@RequestParam("name") String name, @RequestParam("street") String street, 
+	public ModelAndView updateRestaurant(@RequestParam("ID") int id, @RequestParam("name") String name, @RequestParam("street") String street, 
 			@RequestParam("cuisine") String cuisine, @RequestParam("websiteUrl") String websiteUrl, 
 			@RequestParam("phone") String phone, @RequestParam("happyHour") boolean happyHour,
-			@RequestParam("rating") double rating, @RequestParam("ID") int id) {
+			@RequestParam("rating") double rating) {
 		ModelAndView mv = new ModelAndView();
 		Restaurant restaurant = new Restaurant(name, street, cuisine, websiteUrl, phone, happyHour, rating);
 		restaurant = rDao.update(id, restaurant);
-		mv.addObject(restaurant);
-		mv.setViewName("../update");
+		mv.addObject("restaurant", restaurant);
+		mv.setViewName("restaurant");
 		return mv;	
 	}	
 	
@@ -66,8 +66,8 @@ public class RestaurantController {
 		ModelAndView mv = new ModelAndView();
 		Restaurant restaurant = rDao.findById(id);
 		rDao.deleteById(id);
-		mv.addObject(restaurant);
-		mv.setViewName("../delete");
+		mv.addObject("restaurant", restaurant);
+		mv.setViewName("restaurant");
 		return mv;	
 	}
 }
