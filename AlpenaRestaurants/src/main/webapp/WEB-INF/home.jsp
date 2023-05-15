@@ -31,7 +31,7 @@ ${restaurantList }<br>
 				<c:forEach var="restaurant" items="${restaurantList }">
 					<tr>
 						<td>${restaurant.id }</td>
-						<td><a href="update.do?id=${restaurant.id}">${restaurant.name }</a></td>
+						<td><a href="update.do?id=<c:out value="${restaurant.id}"/>">${restaurant.name }</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -9,7 +9,7 @@ public interface RestaurantDAO {
 	Restaurant findById(int restaurantId);
 	List<Restaurant> findAll();
 	Restaurant create(Restaurant restaurant);
-	Restaurant update(int restaurantId, Restaurant restaurant);
+	Restaurant update(int restaurnatId, Restaurant restaurant);
 	boolean deleteById(int restaurantId);
 	
 }
