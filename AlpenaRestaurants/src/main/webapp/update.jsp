@@ -12,7 +12,7 @@
 
 <h1>Add an Alpena, MI Restaurant</h1>
 	<form action="update.do">
-		<input type="hidden" name="ID" value="${restaurant.id }">
+		<input type="hidden" name="id" value="${restaurant.id }">
 		Restaurant: <input type="text" name="name" value="${restaurant.name }" required maxlength="100"><br>
 		Street: <input type="text" name="street" value="${restaurant.street }" required maxlength="100"><br>
 		Cuisine: <input type="text" name="cuisine" value="${restaurant.cuisine }" required maxlength="45"><br>

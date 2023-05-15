@@ -44,12 +44,12 @@ public class RestaurantController {
 		if (restaurant.getId() != 0) {
 			mv.addObject("restaurant", restaurant);
 		}
-		mv.setViewName("restaurant");
+		mv.setViewName("restaurant.jsp");
 		return mv;	
 	}
 
 	@RequestMapping("update.do")
-	public ModelAndView updateRestaurant(@RequestParam("ID") int id, @RequestParam("name") String name, @RequestParam("street") String street, 
+	public ModelAndView updateRestaurant(@RequestParam("id") int id, @RequestParam("name") String name, @RequestParam("street") String street, 
 			@RequestParam("cuisine") String cuisine, @RequestParam("websiteUrl") String websiteUrl, 
 			@RequestParam("phone") String phone, @RequestParam("happyHour") boolean happyHour,
 			@RequestParam("rating") double rating) {
@@ -57,17 +57,19 @@ public class RestaurantController {
 		Restaurant restaurant = new Restaurant(name, street, cuisine, websiteUrl, phone, happyHour, rating);
 		restaurant = rDao.update(id, restaurant);
 		mv.addObject("restaurant", restaurant);
-		mv.setViewName("restaurant");
+		mv.setViewName("restaurant.jsp");
 		return mv;	
 	}	
 	
 	@RequestMapping("delete.do")
 	public ModelAndView deleteRestaurant(@RequestParam("id") int id) {
 		ModelAndView mv = new ModelAndView();
+		List<Restaurant> restaurantList = rDao.findAll();
+		mv.addObject("restaurantList", restaurantList);
 		Restaurant restaurant = rDao.findById(id);
 		rDao.deleteById(id);
 		mv.addObject("restaurant", restaurant);
-		mv.setViewName("restaurant");
+		mv.setViewName("restaurant.jsp");
 		return mv;	
 	}
 }

@@ -30,8 +30,8 @@
 			<a href="${restaurant.websiteUrl }">${restaurant.name }</a>
 		</c:when>
 		<c:otherwise>
-	Please try again.
-	</c:otherwise>
+			Please try again.
+		</c:otherwise>
 	</c:choose>
 
 </body>
