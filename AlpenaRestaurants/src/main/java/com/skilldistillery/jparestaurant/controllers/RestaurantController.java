@@ -1,7 +1,5 @@
 package com.skilldistillery.jparestaurant.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +27,7 @@ public class RestaurantController {
 		ModelAndView mv = new ModelAndView();
 		Restaurant restaurant = rDao.findById(id);
 		mv.addObject("restaurant", restaurant);
-		mv.setViewName("../restaurant");
+		mv.setViewName("restaurant");
 		return mv;	
 	}
 
@@ -44,11 +42,22 @@ public class RestaurantController {
 		if (restaurant.getId() != 0) {
 			mv.addObject("restaurant", restaurant);
 		}
-		mv.setViewName("restaurant.jsp");
+		mv.setViewName("restaurant");
 		return mv;	
 	}
 
 	@RequestMapping("update.do")
+	public ModelAndView updater(@RequestParam("id") int id) {
+		System.err.println("***********************" + id);
+		ModelAndView mv = new ModelAndView();
+		Restaurant restaurant = rDao.findById(id);
+		mv.addObject("restaurant", restaurant);
+		mv.setViewName("update");
+		return mv;
+	}
+	
+	
+	@RequestMapping("updated.do")
 	public ModelAndView updateRestaurant(@RequestParam("id") int id, @RequestParam("name") String name, @RequestParam("street") String street, 
 			@RequestParam("cuisine") String cuisine, @RequestParam("websiteUrl") String websiteUrl, 
 			@RequestParam("phone") String phone, @RequestParam("happyHour") boolean happyHour,
@@ -57,19 +66,18 @@ public class RestaurantController {
 		Restaurant restaurant = new Restaurant(name, street, cuisine, websiteUrl, phone, happyHour, rating);
 		restaurant = rDao.update(id, restaurant);
 		mv.addObject("restaurant", restaurant);
-		mv.setViewName("restaurant.jsp");
+		mv.setViewName("restaurant");
 		return mv;	
 	}	
 	
 	@RequestMapping("delete.do")
 	public ModelAndView deleteRestaurant(@RequestParam("id") int id) {
 		ModelAndView mv = new ModelAndView();
-		List<Restaurant> restaurantList = rDao.findAll();
-		mv.addObject("restaurantList", restaurantList);
+		mv.addObject("restaurantList", rDao.findAll());
 		Restaurant restaurant = rDao.findById(id);
 		rDao.deleteById(id);
 		mv.addObject("restaurant", restaurant);
-		mv.setViewName("restaurant.jsp");
+		mv.setViewName("restaurant");
 		return mv;	
 	}
 }

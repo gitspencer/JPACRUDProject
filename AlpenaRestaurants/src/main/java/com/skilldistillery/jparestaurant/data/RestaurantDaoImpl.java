@@ -31,7 +31,6 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 	@Override
 	public Restaurant create(Restaurant restaurant) {
 		Restaurant add = em.find(Restaurant.class, restaurant);
-		em.getTransaction().begin();
 		add.setStreet(restaurant.getStreet());
 		add.setCuisine(restaurant.getCuisine());
 		add.setWebsiteUrl(restaurant.getWebsiteUrl());
@@ -39,16 +38,12 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 		add.setHappyHour(restaurant.isHappyHour());
 		add.setRating(restaurant.getRating());
 		em.persist(add);
-		em.flush();
-		em.getTransaction().commit();
-		em.close();
 		return add;
 	}
 
 	@Override
 	public Restaurant update(int restaurantId, Restaurant restaurant) {
 		Restaurant updated = em.find(Restaurant.class, restaurantId);
-		em.getTransaction().begin();
 		updated.setName(restaurant.getName());
 		updated.setStreet(restaurant.getStreet());
 		updated.setCuisine(restaurant.getCuisine());
@@ -57,20 +52,14 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 		updated.setHappyHour(restaurant.isHappyHour());
 		updated.setRating(restaurant.getRating());
 		em.persist(updated);
-		em.flush();
-		em.getTransaction().commit();
-		em.close();
 		return updated;
 	}
 
 	@Override
 	public boolean deleteById(int restaurantId) {
-		Restaurant restaurant = em.find(Restaurant.class, restaurantId);
 		em.getTransaction().begin();
+		Restaurant restaurant = em.find(Restaurant.class, restaurantId);
 		em.remove(restaurant);
-		em.flush();
-		em.getTransaction().commit();
-		em.close();
 		return true;
 	}
 

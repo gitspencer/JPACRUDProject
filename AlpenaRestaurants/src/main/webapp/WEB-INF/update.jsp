@@ -8,15 +8,15 @@
 <title>Update Restaurant</title>
 </head>
 <body>
-<jsp:include page="navbar.jsp"></jsp:include>
+<%-- <jsp:include page="navbar.jsp"></jsp:include> --%>
 
 <h1>Add an Alpena, MI Restaurant</h1>
-	<form action="update.do">
+	<form action="updated.do">
 		<input type="hidden" name="id" value="${restaurant.id }">
 		Restaurant: <input type="text" name="name" value="${restaurant.name }" required maxlength="100"><br>
 		Street: <input type="text" name="street" value="${restaurant.street }" required maxlength="100"><br>
 		Cuisine: <input type="text" name="cuisine" value="${restaurant.cuisine }" required maxlength="45"><br>
-		Website: <input type="text" name="websiteUrl" value="${restaurant.website }" required maxlength="2000"><br>
+		Website: <input type="text" name="websiteUrl" value="${restaurant.websiteUrl }" required maxlength="2000"><br>
 		Phone: <input type="text" name="phone" value="${restaurant.phone }" required maxlength="15"><br>
 		
 		Happy Hour(Currently = 

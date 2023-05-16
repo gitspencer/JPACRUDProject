@@ -8,13 +8,13 @@
 <title>Alpena Restaurants</title>
 </head>
 <body>
-<jsp:include page="../navbar.jsp"></jsp:include>
+<%-- <jsp:include page="navbar.jsp"></jsp:include> --%>
 
 <h1>Alpena Restaurant JPACRUD</h1>
 
-<a href="getRestaurant.jsp">Find Restaurant</a><br>
-<a href="add.jsp">Add Restaurant</a><br>
-<a href="delete.jsp">Delete Restaurant</a><br>
+<!-- <a href="getRestaurant.do">Find Restaurant</a><br>
+<a href="add.do">Add Restaurant</a><br>
+<a href="delete.do">Delete Restaurant</a><br> -->
 
 <hr>
 			<h3>Click name to update restaurant.</h3>

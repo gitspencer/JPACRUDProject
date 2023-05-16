@@ -8,7 +8,7 @@
 <title>Add Restaurant</title>
 </head>
 <body>
-<jsp:include page="navbar.jsp"></jsp:include>
+<%-- <jsp:include page="navbar.jsp"></jsp:include> --%>
 
 <h1>Add an Alpena, MI Restaurant</h1>
 	<form action="add.do">

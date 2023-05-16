@@ -29,6 +29,10 @@ public class Restaurant {
 
 	public Restaurant() {}
 	
+	public Restaurant(int id) {
+		this.id = id;
+	}
+	
 	public Restaurant(String name, String street, String cuisine, String websiteUrl, String phone,
 			boolean happyHour, double rating) {
 		this.name = name;
