@@ -24,8 +24,8 @@
 		<c:if test="${restaurant.happyHour == true }"><em>Yes</em></c:if>:)
 		<input type="radio" name="happyHour" value="true">Yes <input type="radio" name="happyHour" value="false" required>No <br>
 		
-		Rating(1-5) (Currently = ${restaurant.happyHour }): <input type="number" name="rating" step="0.1" min="0" max="5" required><br>
-		<input type="submit" value="Add Restaurant">
+		Rating(1-5) (Currently = ${restaurant.rating }): <input type="number" name="rating" step="0.1" min="0" max="5" required><br>
+		<input type="submit" value="Update Restaurant">
 	</form>
 
 </body>
