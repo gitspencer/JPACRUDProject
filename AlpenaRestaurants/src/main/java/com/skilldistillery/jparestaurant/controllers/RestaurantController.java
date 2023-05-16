@@ -23,16 +23,30 @@ public class RestaurantController {
 	}
 	
 	@RequestMapping("getRestaurant.do")
-	public ModelAndView getRestaurant(@RequestParam("id") int id) {
+	public ModelAndView getRestaurant() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("getRestaurant");
+		return mv;	
+	}
+	
+	@RequestMapping("findRestaurant.do")
+	public ModelAndView findRestaurant(@RequestParam("id") int id) {
 		ModelAndView mv = new ModelAndView();
 		Restaurant restaurant = rDao.findById(id);
 		mv.addObject("restaurant", restaurant);
 		mv.setViewName("restaurant");
 		return mv;	
 	}
-
+	
 	@RequestMapping("add.do")
-	public ModelAndView addRestaurant(@RequestParam("name") String name, @RequestParam("street") String street, 
+	public ModelAndView addRestaurant() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("add");
+		return mv;	
+	}
+	
+	@RequestMapping("adder.do")
+	public ModelAndView adderRestaurant(@RequestParam("name") String name, @RequestParam("street") String street, 
 			@RequestParam("cuisine") String cuisine, @RequestParam("websiteUrl") String websiteUrl, 
 			@RequestParam("phone") String phone, @RequestParam("happyHour") boolean happyHour,
 			@RequestParam("rating") double rating) {
@@ -48,7 +62,6 @@ public class RestaurantController {
 
 	@RequestMapping("update.do")
 	public ModelAndView updater(@RequestParam("id") int id) {
-		System.err.println("***********************" + id);
 		ModelAndView mv = new ModelAndView();
 		Restaurant restaurant = rDao.findById(id);
 		mv.addObject("restaurant", restaurant);
@@ -71,9 +84,16 @@ public class RestaurantController {
 	}	
 	
 	@RequestMapping("delete.do")
-	public ModelAndView deleteRestaurant(@RequestParam("id") int id) {
+	public ModelAndView deleter() {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("restaurantList", rDao.findAll());
+		mv.setViewName("delete");
+		return mv;	
+	}
+	
+	@RequestMapping("deleted.do")
+	public ModelAndView deletedRestaurant(@RequestParam("id") int id) {
+		ModelAndView mv = new ModelAndView();
 		Restaurant restaurant = rDao.findById(id);
 		rDao.deleteById(id);
 		mv.addObject("restaurant", restaurant);

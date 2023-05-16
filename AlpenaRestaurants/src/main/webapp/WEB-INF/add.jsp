@@ -8,10 +8,10 @@
 <title>Add Restaurant</title>
 </head>
 <body>
-<%-- <jsp:include page="navbar.jsp"></jsp:include> --%>
+<jsp:include page="navbar.jsp"></jsp:include>
 
 <h1>Add an Alpena, MI Restaurant</h1>
-	<form action="add.do">
+	<form action="adder.do">
 		Restaurant: <input type="text" name="name" required maxlength="100"><br>
 		Street: <input type="text" name="street" required maxlength="100"><br>
 		Cuisine: <input type="text" name="cuisine" required maxlength="45"><br>

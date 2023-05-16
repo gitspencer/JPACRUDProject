@@ -30,15 +30,8 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 
 	@Override
 	public Restaurant create(Restaurant restaurant) {
-		Restaurant add = em.find(Restaurant.class, restaurant);
-		add.setStreet(restaurant.getStreet());
-		add.setCuisine(restaurant.getCuisine());
-		add.setWebsiteUrl(restaurant.getWebsiteUrl());
-		add.setPhone(restaurant.getPhone());
-		add.setHappyHour(restaurant.isHappyHour());
-		add.setRating(restaurant.getRating());
-		em.persist(add);
-		return add;
+		em.persist(restaurant);
+		return restaurant;
 	}
 
 	@Override
@@ -57,7 +50,6 @@ public class RestaurantDaoImpl implements RestaurantDAO {
 
 	@Override
 	public boolean deleteById(int restaurantId) {
-		em.getTransaction().begin();
 		Restaurant restaurant = em.find(Restaurant.class, restaurantId);
 		em.remove(restaurant);
 		return true;

@@ -8,10 +8,10 @@
 <title>Delete Restaurant</title>
 </head>
 <body>
-<%-- 	<jsp:include page="navbar.jsp"></jsp:include> --%>
+<jsp:include page="navbar.jsp"></jsp:include>
 
 	<h1>Delete Restaurant</h1>
-	<form action="delete.do">
+	<form action="deleted.do">
 		Enter id: <input type="text" name="id"> <input type="submit">
 	</form>
 

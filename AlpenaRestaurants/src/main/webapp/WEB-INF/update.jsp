@@ -8,9 +8,9 @@
 <title>Update Restaurant</title>
 </head>
 <body>
-<%-- <jsp:include page="navbar.jsp"></jsp:include> --%>
+<jsp:include page="navbar.jsp"></jsp:include>
 
-<h1>Add an Alpena, MI Restaurant</h1>
+<h1>Update an Alpena, MI Restaurant</h1>
 	<form action="updated.do">
 		<input type="hidden" name="id" value="${restaurant.id }">
 		Restaurant: <input type="text" name="name" value="${restaurant.name }" required maxlength="100"><br>

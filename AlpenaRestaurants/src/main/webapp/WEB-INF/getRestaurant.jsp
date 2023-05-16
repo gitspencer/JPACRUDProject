@@ -8,10 +8,10 @@
 <title>Find Restaurant</title>
 </head>
 <body>
-<%-- 	<jsp:include page="navbar.jsp"></jsp:include> --%>
+<jsp:include page="navbar.jsp"></jsp:include>
 
 	<h1>Find Restaurant</h1>
-	<form action="getRestaurant.do">
+	<form action="findRestaurant.do">
 		Search by id: <input type="text" name="id"> <input
 			type="submit">
 	</form>
